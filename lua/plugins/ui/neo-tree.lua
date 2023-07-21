@@ -1,6 +1,6 @@
 local M = {}
 
-M[0] = "nvim-neo-tree/neo-tree.nvim"
+M[1] = "nvim-neo-tree/neo-tree.nvim"
 M.name = "neo-tree"
 M.branch = "v3.x"
 
