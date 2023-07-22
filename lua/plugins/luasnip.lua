@@ -3,6 +3,7 @@
 local M = {}
 
 M[1] = "L3MON4D3/LuaSnip"
+M.name = 'luasnip'
 M.dependencies = {
 	"rafamadriz/friendly-snippets"
 }

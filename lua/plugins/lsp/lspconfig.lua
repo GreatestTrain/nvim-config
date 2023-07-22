@@ -9,9 +9,14 @@ M.opts = require 'configs.lspconfig'
 
 M.event = { 'InsertEnter' }
 
-M.config = function(plugin, opts)
+M.config = function(plugin)
 	local lspconfig = require(plugin.name)
-	for server, config in pairs(opts) do
+	local ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
+	local capabilities = nil
+	if ok then
+		capabilities = cmp_nvim_lsp.default_capabilities()
+	end
+	for server, config in pairs(plugin.opts(capabilities)) do
 		lspconfig[server].setup(config)
 	end
 end

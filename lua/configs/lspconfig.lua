@@ -17,4 +17,9 @@ M.julials 	= {}
 M.html 		= {}
 M.opencl_ls 	= {}
 
-return M
+return function(capabilities)
+	for _, config in pairs(M) do
+		 config.capabilities = capabilities
+	end
+	return M
+end
