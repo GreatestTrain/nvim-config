@@ -46,9 +46,6 @@ M.config = function(plugin, opts)
 			{ name = 'cmdline' }
 		})
 	})
-
-	-- local capabilities = require('cmp_nvim_lsp').default_capabilities()
-	-- require('lspconfig')
 end
 
 return M
