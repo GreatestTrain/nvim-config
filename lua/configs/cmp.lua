@@ -14,8 +14,9 @@ local M = function()
 	}
 	configs.sources = cmp.config.sources({
 		{ name = 'nvim_lsp' },
-		{ name = 'vsnip' },
-		{ name = 'buffer' }
+		{ name = 'luasnip' },
+		{ name = 'buffer' },
+		{ name = 'path' },
 	})
 	configs.window = {
 	      completion = cmp.config.window.bordered(),

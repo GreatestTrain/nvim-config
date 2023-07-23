@@ -1,6 +1,6 @@
 -- Bootstrap lazy.nvim --
 
-vim.g.mapleader = " "
+require 'configs.preinit'
 
 local lazy_utils = require 'utils.lazy'
 lazy_utils.bootstrap()

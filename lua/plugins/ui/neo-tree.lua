@@ -10,4 +10,6 @@ M.dependencies = {
 	"nui",
 }
 
+M.opts = require 'configs.ui.neo-tree'
+
 return M

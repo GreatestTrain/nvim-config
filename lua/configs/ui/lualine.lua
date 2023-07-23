@@ -38,6 +38,7 @@ local conditions = {
 -- Config
 local config = {
   options = {
+    disabled_filetypes = { 'lazy', 'neo-tree' },
     -- Disable sections and component separators
     component_separators = '',
     section_separators = '',
