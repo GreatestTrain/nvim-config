@@ -1,13 +1,16 @@
 local M = {}
 
+local ok, conf = pcall(require, 'configs.lsp.lspconfig')
+
 M[1] = 'neovim/nvim-lspconfig'
 M.name = 'lspconfig'
 
-M.dependencies = { 'neodev' , 'mason' }
+M.dependencies = {
+	'neodev',
+}
 
-M.opts = require 'configs.lspconfig'
-
-M.event = { 'InsertEnter' }
+-- M.opts = require 'configs.lspconfig'
+M.opts = ok and conf or {}
 
 M.config = function(plugin)
 	local lspconfig = require(plugin.name)

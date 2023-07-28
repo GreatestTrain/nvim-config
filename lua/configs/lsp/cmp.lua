@@ -23,7 +23,7 @@ local M = function()
 	      documentation = cmp.config.window.bordered(),
 	}
 	configs.mapping = function()
-	      	local luasnip = require 'luasnip'
+	    local luasnip = require 'luasnip'
 		return cmp.mapping.preset.insert({
 		      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
 		      ['<C-f>'] = cmp.mapping.scroll_docs(4),

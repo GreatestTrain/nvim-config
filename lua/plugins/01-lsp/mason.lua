@@ -4,7 +4,6 @@ M[1] = 'williamboman/mason.nvim'
 M.name = 'mason'
 M.dependencies = {
 	'lspconfig',
-	"williamboman/mason-lspconfig.nvim",
 }
 
 M.opts = {
