@@ -8,6 +8,7 @@ M.dependencies = {
 	"plenary",
 	"nvim-web-devicons", -- not strictly required, but recommended
 	"nui",
+	"s1n7ax/nvim-window-picker"
 }
 
 M.opts = require 'configs.ui.neo-tree'

@@ -1,8 +1,8 @@
 local M = {}
 
 M[1] = "folke/which-key.nvim"
-M.config = function(lp, opts)
-	wk = require("which-key")
+M.config = function(_, opts)
+	local wk = require("which-key")
 	wk.register(opts)
 end
 
