@@ -23,4 +23,7 @@ M.opts = function ()
 		}
 	}
 end
+
+M.enabled = false
+
 return M

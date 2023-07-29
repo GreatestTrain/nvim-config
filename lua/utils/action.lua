@@ -9,10 +9,10 @@ local Action = {
 Action.__index = Action
 
 ---@param func function
----@param mapping Mapping[]
+---@param mapping Mapping[]|nil
 ---@param desc string
-Action.new = function(func, mapping, desc)
-	local instance = setmetatable({}, Action)
+function Action:new(func, mapping, desc)
+	local instance = setmetatable({}, self)
 	if type(func) == "function" then
 		instance.func = func
 	end
@@ -35,14 +35,16 @@ Action.new = function(func, mapping, desc)
 	return instance
 end
 
-function Action:set_key(mode, key, opt)
-	self.mode = mode
-	self.key = key
-
-	vim.keymap.set(mode, key, self.func, opt)
+---@param mapping Mapping
+function Action:set_key(mapping)
+	if getmetatable(mapping) ~= Mapping then
+		error("<mapping> must be of type Mapping.", 103)
+	end
+	vim.keymap.set(mapping.mode, mapping.key, self.func, mapping.opt)
 end
 
 function Action:unset_key()
+	self.mappings.unset_key()
 end
 
 return Action

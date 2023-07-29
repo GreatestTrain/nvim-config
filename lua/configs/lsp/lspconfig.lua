@@ -11,11 +11,14 @@ M.lua_ls = {
 
 }
 
-M.clangd 	= {}
-M.pyright 	= {}
-M.julials 	= {}
-M.html 		= {}
+M.clangd 		= {}
+M.pyright 		= {}
+M.julials 		= {}
+M.html 			= {}
 M.opencl_ls 	= {}
+M.marksman 		= {}
+M.awk_ls 		= {}
+M.bashls 		= {}
 
 return function(capabilities)
 	for _, config in pairs(M) do

@@ -15,7 +15,18 @@ M.dependencies = {
 	'luasnip',
 	'saadparwaiz1/cmp_luasnip',
 	'kdheepak/cmp-latex-symbols',
-	'petertriho/cmp-git'
+	'petertriho/cmp-git',
+	{ 'rcarriga/cmp-dap', dependencies = { 'dap' } },
+	-- { 'aspeddro/cmp-pandoc.nvim', dependencies = { 'plenary', 'nabla', "aspeddro/pandoc.nvim"} },
+	{
+    	"paopaol/cmp-doxygen",
+    	dependencies = {
+      		"nvim-treesitter/nvim-treesitter",
+      		"nvim-treesitter/nvim-treesitter-textobjects"
+    	}
+	},
+	"jc-doyle/cmp-pandoc-references",
+	'onsails/lspkind.nvim',
 }
 
 -- M.opts = require 'configs.cmp'
@@ -28,8 +39,9 @@ M.config = function(plugin, opts)
 			opts[key] = value()
 		end
 	end
+	local lspkind = require 'lspkind'
 	cmp.setup(opts)
-
+	cmp.setup { formatting = { format = lspkind.cmp_format({ mode='symbol', maxwidth=50 }) } }
 	cmp.setup.filetype({'tex, markdown', 'plaintex'}, {
 		mapping = opts.mapping,
 		sources = {
@@ -66,6 +78,12 @@ M.config = function(plugin, opts)
 			{ name = 'cmdline' }
 		})
 	})
+
+	cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
+  		sources = {
+    		{ name = "dap" },
+  	},
+})
 end
 
 return M

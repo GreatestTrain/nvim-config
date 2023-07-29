@@ -17,6 +17,8 @@ local M = function()
 		{ name = 'luasnip' },
 		{ name = 'buffer' },
 		{ name = 'path' },
+		{ name = "doxygen" },
+		{ name = 'pandoc_references' },
 	})
 	configs.window = {
 	      completion = cmp.config.window.bordered(),

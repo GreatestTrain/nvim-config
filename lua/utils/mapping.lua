@@ -1,18 +1,15 @@
----@class Action
-local Action = require 'utils.action'
-
 ---@class Mapping
 local Mapping = {
 	mode = nil,
 	key = nil,
-	opt = {},
+	opt = { silent = true },
 
 }
-Mapping.__index = {}
+Mapping.__index = Mapping
 
 ---@param mode string|string[]
 ---@param key string|string[]
----@param opt string|string[]
+---@param opt table
 function Mapping:new(mode, key, opt)
 	local instance = setmetatable({}, self)
 	if mode == nil or key == nil then
@@ -21,7 +18,7 @@ function Mapping:new(mode, key, opt)
 
 	instance.mode = mode
 	instance.key = key
-	instance.opt = opt or { silent = true }
+	instance.opt = opt
 	return instance
 end
 
@@ -34,6 +31,8 @@ end
 function Mapping:add(mapping)
 	if getmetatable(mapping) == Mapping then
 		table.insert(self.mode, mapping.mode)
+		table.insert(self.key, mapping.key)
+		table.insert(self.opt, mapping.opt)
 	end
 end
 
