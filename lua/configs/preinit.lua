@@ -19,3 +19,5 @@ vim.o.shiftwidth = 4
 
 vim.o.number = true
 vim.o.list = true
+vim.o.diffopt = "vertical,filler,internal,closeoff"
+vim.o.splitright = true
