@@ -8,6 +8,7 @@ M[1] = 'hrsh7th/nvim-cmp'
 M.name = 'cmp'
 M.dependencies = {
 	'lspconfig',
+	'lsp-signature-help',
 	'hrsh7th/cmp-nvim-lsp',
 	'hrsh7th/cmp-buffer',
 	'hrsh7th/cmp-path',
@@ -17,7 +18,6 @@ M.dependencies = {
 	'kdheepak/cmp-latex-symbols',
 	'petertriho/cmp-git',
 	{ 'rcarriga/cmp-dap', dependencies = { 'dap' } },
-	-- { 'aspeddro/cmp-pandoc.nvim', dependencies = { 'plenary', 'nabla', "aspeddro/pandoc.nvim"} },
 	{
     	"paopaol/cmp-doxygen",
     	dependencies = {
@@ -25,8 +25,9 @@ M.dependencies = {
       		"nvim-treesitter/nvim-treesitter-textobjects"
     	}
 	},
-	"jc-doyle/cmp-pandoc-references",
+	'jc-doyle/cmp-pandoc-references',
 	'onsails/lspkind.nvim',
+	'neo-tree'
 }
 
 -- M.opts = require 'configs.cmp'
@@ -79,11 +80,13 @@ M.config = function(plugin, opts)
 		})
 	})
 
+	vim.o.winhighlight = opts.window.completion.winhighlight
 	cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
   		sources = {
     		{ name = "dap" },
-  	},
-})
+  		},
+	}
+)
 end
 
 return M

@@ -17,8 +17,9 @@ local M = function()
 		{ name = 'luasnip' },
 		{ name = 'buffer' },
 		{ name = 'path' },
-		{ name = "doxygen" },
+		{ name = 'doxygen' },
 		{ name = 'pandoc_references' },
+		{ name = 'nvim_lsp_signature_help' },
 	})
 	configs.window = {
 	      completion = cmp.config.window.bordered(),
@@ -27,15 +28,15 @@ local M = function()
 	configs.mapping = function()
 	    local luasnip = require 'luasnip'
 		return cmp.mapping.preset.insert({
-		      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-		      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+		      ['<C-k>'] = cmp.mapping.scroll_docs(-4),
+		      ['<C-j>'] = cmp.mapping.scroll_docs(4),
 		      ['<C-Space>'] = cmp.mapping.complete(),
 		      ['<C-e>'] = cmp.mapping.abort(),
 		      ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 		      ["<Tab>"] = cmp.mapping(function(fallback)
 			      if cmp.visible() then
 			        cmp.select_next_item()
-			      -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable() 
+					-- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable() 
 			      -- they way you will only jump inside the snippet region
 			      elseif luasnip.expand_or_jumpable() then
 				luasnip.expand_or_jump()
