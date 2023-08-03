@@ -1,3 +1,6 @@
+---@module 'plugin_spec'
+
+---@type Plugin
 local M = {}
 
 M[1] = 'nvim-treesitter/nvim-treesitter'

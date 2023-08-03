@@ -1,44 +1,35 @@
 local M = {
 	input = {
-    -- Set to false to disable the vim.ui.input implementation
-    enabled = true,
+		enabled = true,
+		default_prompt = "Input:",
+		title_pos = "left",
+		insert_only = true,
 
-    -- Default prompt string
-    default_prompt = "Input:",
+		-- When true, input will start in insert mode.
+		start_in_insert = true,
 
-    -- Can be 'left', 'right', or 'center'
-    title_pos = "left",
+		-- These are passed to nvim_open_win
+		border = "rounded",
+		-- 'editor' and 'win' will default to being centered
+		relative = "cursor",
 
-    -- When true, <Esc> will close the modal
-    insert_only = true,
+		-- These can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
+		prefer_width = 40,
+		width = nil,
+		-- min_width and max_width can be a list of mixed types.
+		-- min_width = {20, 0.2} means "the greater of 20 columns or 20% of total"
+		max_width = { 140, 0.9 },
+		min_width = { 20, 0.2 },
 
-    -- When true, input will start in insert mode.
-    start_in_insert = true,
-
-    -- These are passed to nvim_open_win
-    border = "rounded",
-    -- 'editor' and 'win' will default to being centered
-    relative = "cursor",
-
-    -- These can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
-    prefer_width = 40,
-    width = nil,
-    -- min_width and max_width can be a list of mixed types.
-    -- min_width = {20, 0.2} means "the greater of 20 columns or 20% of total"
-    max_width = { 140, 0.9 },
-    min_width = { 20, 0.2 },
-
-    buf_options = {},
-    win_options = {
+		buf_options = {},
+		win_options = {
       -- Window transparency (0-100)
-      winblend = 10,
-      -- Disable line wrapping
-      wrap = false,
-      -- Indicator for when text exceeds window
-      list = true,
-      listchars = "precedes:…,extends:…",
-      -- Increase this for more context when text scrolls off the window
-      sidescrolloff = 0,
+		winblend = 10,
+		-- Disable line wrapping
+		wrap = false,
+		list = true,
+		listchars = "precedes:…,extends:…",
+		sidescrolloff = 0,
     },
 
     -- Set to `false` to disable

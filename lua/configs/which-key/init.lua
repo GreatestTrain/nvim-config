@@ -4,6 +4,7 @@ local ok, wk = pcall(require, 'which-key')
 
 if ok then
 	M[#M+1] = require 'configs.which-key.lsp'
+	i = "asd"
 end
 
 function M.setup()

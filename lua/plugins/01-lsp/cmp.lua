@@ -25,9 +25,7 @@ M.dependencies = {
       		"nvim-treesitter/nvim-treesitter-textobjects"
     	}
 	},
-	'jc-doyle/cmp-pandoc-references',
 	'onsails/lspkind.nvim',
-	'neo-tree'
 }
 
 -- M.opts = require 'configs.cmp'
@@ -80,7 +78,7 @@ M.config = function(plugin, opts)
 		})
 	})
 
-	vim.o.winhighlight = opts.window.completion.winhighlight
+	-- vim.o.winhighlight = opts.window.completion.winhighlight
 	cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
   		sources = {
     		{ name = "dap" },

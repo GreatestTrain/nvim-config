@@ -1,16 +1,18 @@
+---@module 'plugin_spec'
+
 local M = {}
 
-M[1] = 'metalelf0/jellybeans-nvim'
-M.name = 'jellybeans-nvim'
+M[1] = 'EdenEast/nightfox.nvim'
+M.name = 'nightfox'
 M.dependencies = {
 	{
 		'rktjmp/lush.nvim',
-		['name'] = 'lush'
+		name = 'lush'
 	}
 }
 
-M.config = function (plugin)
-	vim.cmd ("colorscheme " .. plugin.name)
+M.config = function ()
+	vim.cmd ("colorscheme " .. "carbonfox")
 end
 
 return M

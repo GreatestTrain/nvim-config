@@ -11,12 +11,12 @@ M.version = "2.*"
 M.build = "make install_jsregexp"
 
 M.config = function(plugin, opts)
-	require("luasnip").setup(opts)
+	require(plugin.name).setup(opts)
 	require("luasnip.loaders.from_vscode").lazy_load()
 	require("luasnip.loaders.from_vscode").lazy_load({
 		paths = {
-			"$HOME/.config/Code - OSS/User/snippets/",
-			"$HOME/.config/Code/User/snippets/",
+			"~/.config/Code - OSS/User/snippets/",
+			"~/.config/Code/User/snippets/",
 		}
 	})
 	require("luasnip.loaders.from_snipmate").lazy_load()

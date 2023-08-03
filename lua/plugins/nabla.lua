@@ -1,3 +1,6 @@
+---@module 'plugin_spec'
+
+---@type Plugin
 local M = {}
 
 M[1] = 'jbyuki/nabla.nvim'
