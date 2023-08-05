@@ -1,0 +1,3 @@
+---@meta
+---@module 'types.plugin_spec'
+---@module 'types.keybindings'

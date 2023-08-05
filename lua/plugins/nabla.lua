@@ -1,4 +1,6 @@
----@module 'plugin_spec'
+-- nabla
+-- plugin specification
+-- See: https://github.com/jbyuki/nabla.nvim
 
 ---@type Plugin
 local M = {}

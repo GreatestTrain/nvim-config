@@ -1,3 +1,5 @@
+---@meta
+
 ---@class Plugin
 ---@field [1]? string "Short plugin url."
 ---@field dir? 	string "A directory pointing to a local plugin."

@@ -1,6 +1,6 @@
 local M = {}
 
-M['which-key'] = require 'configs.which-key'
+M['mappings'] = require 'configs.mappings'
 
 function M.setup()
 	for _, config in pairs(M) do
