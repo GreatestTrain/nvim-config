@@ -7,6 +7,7 @@ M.mappings = {
 	l = { ':BufferNext<CR>' , 'Next Tab.' },
 	h = { ':BufferPrev<CR>' , 'Previous Tab.' },
 	x = { ':BufferClose<CR>' , 'Close Tab.' },
+	g = { ':BufferGoto v:count<CR>', 'Go to nth tab'}
 }
 
 M.opts = {
