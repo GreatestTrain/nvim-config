@@ -11,5 +11,6 @@ M[#M+1] = require "plugins.00-ui.colorscheme"
 M[#M+1] = require "plugins.00-ui.dressing"
 M[#M+1] = require "plugins.00-ui.window-picker"
 M[#M+1] = require "plugins.00-ui.scope"
+M[#M+1] = require "plugins.00-ui.spectacle"
 
 return M

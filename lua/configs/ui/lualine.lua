@@ -22,22 +22,22 @@ local config = function()
 			lualine_z = { 'location' }
 		},
 		winbar = {
-			lualine_a = { 'filename' },
-			lualine_b = {
+			lualine_b = { { 'filename', path=1} },
+			lualine_c = {
 				{ 'diagnostics', sources = { 'nvim_lsp' } }
 			},
-			lualine_c = {},
+			lualine_a = {},
 			lualine_x = {},
 			lualine_y = {},
 			lualine_z = { 'datetime' },
 		},
 
 		inactive_winbar = {
-			lualine_a = { 'filename' },
-			lualine_b = {
+			lualine_b = { { 'filename', path=1 } },
+			lualine_c = {
 				{ 'diagnostics', sources = { 'nvim_lsp' } }
 			},
-			lualine_c = {},
+			lualine_a = {},
 			lualine_x = {},
 			lualine_y = {},
 			lualine_z = {},
