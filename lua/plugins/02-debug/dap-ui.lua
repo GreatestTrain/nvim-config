@@ -1,13 +1,12 @@
+---@type Plugin
 local M = {}
-
-local ok, conf = pcall(require, 'configs.lsp.dapui')
-
 
 M[1] = 'rcarriga/nvim-dap-ui'
 M.name = 'dap-ui'
 
 M.dependencies = {'dap'}
 
-M.opts = (ok) and conf or {}
+local ok, conf = pcall(require, 'configs.lsp.dapui')
+M.opts = ok and conf or {}
 
 return M

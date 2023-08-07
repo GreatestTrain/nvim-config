@@ -14,4 +14,7 @@ M.dependencies = {
 
 M.tag = '0.1.2'
 
+local ok, conf = pcall(require, 'configs.telescope')
+M.opts = ok and conf or {}
+
 return M

@@ -11,6 +11,8 @@ M.dependencies = {
 M.version = "2.*"
 M.build = "make install_jsregexp"
 
+local ok, conf = pcall(require, 'configs.luasnip')
+M.opts = ok and conf or {}
 M.config = function(plugin, opts)
 	require(plugin.name).setup(opts)
 	require("luasnip.loaders.from_vscode").lazy_load()

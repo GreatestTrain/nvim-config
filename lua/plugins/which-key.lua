@@ -7,7 +7,7 @@ local M = {
 	name = 'which-key',
 		config = function(plugin, opts)
 		require (plugin.name).setup(opts)
-		local ok, keys = pcall(require, 'configs.which-key')
+		local ok, keys = pcall(require, 'configs.mappings')
 		if ok then
 			keys.setup()
 		end
