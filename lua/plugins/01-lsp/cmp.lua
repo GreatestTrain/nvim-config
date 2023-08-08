@@ -1,47 +1,41 @@
--- nvim-cmp plugin specification
+-- nvim-cmp 
+-- plugin specification
+-- See: 
 
+---@type Plugin
 local M = {}
-
-local ok, conf = pcall(require, 'configs.lsp.cmp')
 
 M[1] = 'hrsh7th/nvim-cmp'
 M.name = 'cmp'
 M.dependencies = {
+	'luasnip',
 	'lspconfig',
 	'lsp-signature-help',
-	'hrsh7th/cmp-nvim-lsp',
-	'hrsh7th/cmp-buffer',
-	'hrsh7th/cmp-path',
-	'hrsh7th/cmp-cmdline',
-	'luasnip',
-	'saadparwaiz1/cmp_luasnip',
-	'kdheepak/cmp-latex-symbols',
-	'petertriho/cmp-git',
-	{ 'rcarriga/cmp-dap', dependencies = { 'dap' } },
-	{
-    	"paopaol/cmp-doxygen",
-    	dependencies = {
-      		"nvim-treesitter/nvim-treesitter",
-      		"nvim-treesitter/nvim-treesitter-textobjects"
-    	}
-	},
-	'onsails/lspkind.nvim',
+	{ 'windwp/nvim-autopairs',                name = 'autopairs' },
+	{ 'saadparwaiz1/cmp_luasnip',             name = 'cmp-luasnip' },
+	{ 'L3MON4D3/cmp-luasnip-choice',          name = 'cmp-luasnip-choice' },
+	{ 'hrsh7th/cmp-nvim-lsp',                 name = 'cmp-nvim-lsp' },
+	{ 'hrsh7th/cmp-nvim-lsp-document-symbol', name = 'cmp-nvim-lsp-document-symbol' },
+	{ 'hrsh7th/cmp-buffer',                   name = 'cmp-buffer' },
+	{ 'hrsh7th/cmp-path',                     name = 'cmp-path' },
+	{ 'hrsh7th/cmp-cmdline',                  name = 'cmp-cmdline' },
+	{ 'f3fora/cmp-spell',                     name = 'cmp-spell' },
+	{ 'kdheepak/cmp-latex-symbols',           name = 'cmp-latex-symbols' },
+	{ 'petertriho/cmp-git',                   name = 'cmp-git' },
+	{ 'rcarriga/cmp-dap',                     name = 'cmp-dap',                     dependencies = { 'dap' } },
+	{ 'onsails/lspkind.nvim',                 name = 'lspkind' },
+	{ 'jc-doyle/cmp-pandoc-references',       name = 'cmp-pandoc' }
 }
 
--- M.opts = require 'configs.cmp'
-M.opts = (ok) and conf or {}
+local ok, conf = pcall(require, 'configs.lsp.cmp')
+M.opts = ok and conf or {}
 
 M.config = function(plugin, opts)
 	local cmp = require(plugin.name)
-	for key, value in pairs(opts) do
-		if type(value) == "function" then
-			opts[key] = value()
-		end
-	end
-	local lspkind = require 'lspkind'
+	local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 	cmp.setup(opts)
-	cmp.setup { formatting = { format = lspkind.cmp_format({ mode='symbol', maxwidth=50 }) } }
-	cmp.setup.filetype({'tex, markdown', 'plaintex'}, {
+
+	cmp.setup.filetype({ 'tex, markdown', 'plaintex' }, {
 		mapping = opts.mapping,
 		sources = {
 			{ name = "latex_symbols", option = { strategy = 2 } },
@@ -63,7 +57,7 @@ M.config = function(plugin, opts)
 		})
 	})
 
-	cmp.setup.cmdline({'/', '?'}, {
+	cmp.setup.cmdline({ '/', '?' }, {
 		mapping = cmp.mapping.preset.cmdline(),
 		sources = {
 			{ name = 'buffer' }
@@ -78,13 +72,16 @@ M.config = function(plugin, opts)
 		})
 	})
 
-	-- vim.o.winhighlight = opts.window.completion.winhighlight
 	cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
-  		sources = {
-    		{ name = "dap" },
-  		},
-	}
-)
+		sources = {
+			{ name = "dap" },
+		},
+	})
+
+	cmp.event:on(
+		'confirm_done',
+		cmp_autopairs.on_confirm_done()
+	)
 end
 
 return M
