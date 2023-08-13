@@ -13,5 +13,6 @@ M[#M+1] = require "plugins.00-ui.scope"
 M[#M+1] = require "plugins.00-ui.spectacle"
 M[#M+1] = require "plugins.00-ui.neo-tree"
 M[#M+1] = require "plugins.00-ui.trouble"
+M[#M+1] = require "plugins.00-ui.comment"
 
 return M

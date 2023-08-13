@@ -1,7 +1,8 @@
+---@diagnostic disable: different-requires
 -- Before lazy is loaded
 pcall(require, 'configs.preinit')
 
--- Bootstrap lazy.nvim --
+-- Bootstrap lazy.nvim
 local lazy_utils = require 'utils.lazy'
 lazy_utils.bootstrap()
 

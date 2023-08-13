@@ -12,3 +12,4 @@ vim.o.number = true
 vim.o.list = true
 vim.o.splitright = true
 vim.o.diffopt = "vertical,filler,internal,closeoff"
+vim.o.sessionoptions = "tabpages,winsize,help,terminal"

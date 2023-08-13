@@ -1,9 +1,10 @@
-local config = {}
-
-config.close_if_last_window = true
-config.popup_border_style = 'rounded'
-config.enable_git_status = true
-config.enable_diagnostics = true
-
+local config = {
+	close_if_last_window = true,
+	popup_border_style = 'rounded',
+	enable_git_status = true,
+	enable_diagnostics = true,
+	use_libuv_file_watcher = true,
+	auto_clean_after_session_restore = true,
+}
 
 return config

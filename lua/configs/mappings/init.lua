@@ -5,6 +5,7 @@ local ok, wk = pcall(require, 'which-key')
 if ok then
 	M[#M+1] = require 'configs.mappings.lsp'
 	M[#M+1] = require 'configs.mappings.ui'
+	M[#M+1] = require 'configs.mappings.telescope'
 end
 
 function M.setup()
