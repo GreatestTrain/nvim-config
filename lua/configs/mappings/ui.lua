@@ -3,6 +3,7 @@ local M = {}
 M.mappings = {
 	--n = { 'BufferNext' , 'Next Tab.' },
 	--p = { 'BufferPrev' , 'Previous Tab.' },
+	K = { vim.lsp.buf.hover, 'Hover'},
 	t = {
 		name = 'Tabs',
 		l = { ':bnext<CR>', 'Next Buffer' },

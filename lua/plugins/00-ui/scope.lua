@@ -3,7 +3,7 @@
 -- See: https://github.com/tiagovla/scope.nvim
 -------------------------------------------------
 
--- Unifies tabs with buffers making it simplier to work with.
+-- Unifies tabs with buffers making it simpler to work with.
 --
 
 ---@type Plugin

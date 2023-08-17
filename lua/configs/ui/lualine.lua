@@ -3,7 +3,7 @@ local config = function()
 		extensions = { 'nvim-tree' },
 		options = {
 			icons_enabled = true,
-			disabled_filetypes = { 'lazy', 'NvimTree', 'neo-tree' },
+			disabled_filetypes = { 'lazy', 'NvimTree', 'neo-tree', 'Trouble' },
 		},
 		sections = {
 			lualine_a = { 'mode' },

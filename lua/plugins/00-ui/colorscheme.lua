@@ -1,9 +1,8 @@
----@module 'plugin_spec'
-
+---@type Plugin
 local M = {}
 
-M[1] = 'EdenEast/nightfox.nvim'
-M.name = 'nightfox'
+M[1] = 'rockyzhang24/arctic.nvim'
+M.name = 'arctic'
 M.dependencies = {
 	{
 		'rktjmp/lush.nvim',
@@ -12,7 +11,7 @@ M.dependencies = {
 }
 
 M.config = function ()
-	vim.cmd ("colorscheme " .. "carbonfox")
+	vim.cmd ("colorscheme " .. "arctic")
 end
 
 return M

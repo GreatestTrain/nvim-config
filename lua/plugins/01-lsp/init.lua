@@ -8,5 +8,7 @@ M[#M+1] = require 'plugins.01-lsp.mason'
 M[#M+1] = require 'plugins.01-lsp.mason-lspconfig'
 M[#M+1] = require 'plugins.01-lsp.lsp-signature-help'
 M[#M+1] = require 'plugins.01-lsp.neogen'
+-- M[#M+1] = require 'plugins.01-lsp.nvim-lint'
+M[#M+1] = require 'plugins.01-lsp.null-ls'
 
 return M

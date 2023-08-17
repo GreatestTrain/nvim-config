@@ -1,5 +1,6 @@
 return {
 	ensure_installed = {
+		'efm',
 		'awk_ls',
 		'bashls',
 		'clangd',
@@ -12,8 +13,6 @@ return {
 		'lua_ls',
 		'marksman',
 		'opencl_ls',
-		'pyright',
-		'pylsp',
 		'rust_analyzer',
 		'taplo',
 		'lemminx',
