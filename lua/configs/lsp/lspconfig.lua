@@ -4,7 +4,11 @@
 local M     = {}
 
 M.efm = {
-	cmd = { vim.env['HOME'] .. '/.local/share/nvim/mason/bin/efm-langserver',  '-c', vim.fn.stdpath('config') .. '/efm.yaml' },
+	cmd = {
+		vim.fn.stdpath("data") .. '/mason/bin/efm-langserver',
+		'-c',
+		vim.fn.stdpath('config') .. '/efm.yaml'
+	},
 	filetypes = { 'c', 'cpp', 'python', 'html', 'json', 'yaml', 'toml', 'sh', 'markdown', 'tex', 'typescript', 'awk' },
 	init_options = { documentFormatting = true , documentRangeFormatting = true }
 
