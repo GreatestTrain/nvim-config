@@ -4,7 +4,11 @@
 local M = {}
 
 M.efm = {
-	cmd = { vim.fn.stdpath('data') .. '/mason/bin/efm-langserver',  '-c', vim.fn.stdpath('config') .. '/efm.yaml' },
+	cmd = {
+		vim.fn.stdpath("data") .. '/mason/bin/efm-langserver',
+		'-c',
+		vim.fn.stdpath('config') .. '/efm.yaml'
+	},
 	filetypes = { 'c', 'cpp', 'python', 'html', 'json', 'yaml', 'toml', 'sh', 'markdown', 'tex', 'typescript', 'awk' },
 	init_options = { documentFormatting = true , documentRangeFormatting = true }
 
@@ -34,7 +38,6 @@ M.rust_analyzer = {}
 
 return function(capabilities)
 	if capabilities == nil then return M end
-
 	for _, config in pairs(M) do
 		config.capabilities = capabilities
 	end
