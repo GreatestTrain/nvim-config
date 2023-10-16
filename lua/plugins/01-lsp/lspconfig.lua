@@ -1,7 +1,5 @@
 local M = {}
 
-local ok, conf = pcall(require, 'configs.lsp.lspconfig')
-
 M[1] = 'neovim/nvim-lspconfig'
 M.name = 'lspconfig'
 
@@ -9,17 +7,17 @@ M.dependencies = {
 	'neodev',
 }
 
--- M.opts = require 'configs.lspconfig'
-M.opts = ok and conf or {}
+local ok, conf = pcall(require, 'configs.lsp.lspconfig')
+M.opts = function()
+ local fn = ok and conf or {}
+ if type(fn) == "function" then
+	 return fn(require('cmp_nvim_lsp').default_capabilities())
+ end
+end
 
-M.config = function(plugin)
+M.config = function(plugin, opts)
 	local lspconfig = require(plugin.name)
-	local _, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
-	local capabilities = nil
-	if _ then
-		capabilities = cmp_nvim_lsp.default_capabilities()
-	end
-	for server, config in pairs(plugin.opts(capabilities)) do
+	for server, config in pairs(opts) do
 		lspconfig[server].setup(config)
 	end
 end
