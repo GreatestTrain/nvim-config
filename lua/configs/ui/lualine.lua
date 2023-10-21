@@ -1,9 +1,8 @@
 local config = function()
 	return {
-		extensions = { 'nvim-tree' },
 		options = {
 			icons_enabled = true,
-			disabled_filetypes = { 'lazy', 'NvimTree', 'neo-tree', 'Trouble' },
+			disabled_filetypes = { 'lazy', 'NvimTree', 'neo-tree', 'Trouble', 'TelescopePrompt' },
 		},
 		sections = {
 			lualine_a = { 'mode' },
@@ -24,8 +23,8 @@ local config = function()
 		winbar = {
 			lualine_b = { { 'filetype', icon_only = true }, },
 			lualine_c = {
-				{ 'filename',     path = 1 },
-				{ 'diagnostics',  sources = { 'nvim_lsp' }, },
+				{ 'filename',    path = 1 },
+				{ 'diagnostics', sources = { 'nvim_lsp' }, },
 				{ 'searchcount' }
 			},
 			lualine_a = {},
@@ -38,7 +37,7 @@ local config = function()
 			lualine_b = { { 'filetype', icon_only = true }, },
 			lualine_c = {
 				{ 'diagnostics', sources = { 'nvim_lsp' } },
-				{ 'filename', path = 1 },
+				{ 'filename',    path = 1 },
 				{ 'searchcount' },
 			},
 			lualine_a = {},
@@ -47,6 +46,15 @@ local config = function()
 			lualine_z = {},
 		},
 		tabline = {
+			lualine_a = {
+				{
+					'branch',
+					separator = { left = '', right = '' },
+					on_click = function ()
+						vim.cmd ':Telescope git_branches'
+					end
+				}
+			},
 			lualine_b = {
 				{
 					'buffers',
@@ -57,16 +65,16 @@ local config = function()
 						fzf = 'FZF',
 						alpha = 'Alpha',
 						NvimTree = false,
+						['neo-tree'] = false,
 					},
 					symbols = { alternate_file = '' },
-					separator = { left = ' ', right = ' ' }
+					-- separator = { left = ' ', right = ' ' }
 				},
 			},
-			lualine_a = { { 'branch', separator = { left = '', right = '' } } },
 			lualine_c = {},
 			lualine_x = {},
 			lualine_y = {},
-			lualine_z = { { 'tabs', mode = 2 } }
+			lualine_z = { { 'tabs', mode = 3 } }
 		}
 	}
 end

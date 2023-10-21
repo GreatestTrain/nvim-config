@@ -15,7 +15,10 @@ M.mappings = {
 		r = { function () vim.ui.input({prompt = 'New tab name'} , function (name) vim.cmd(':LualineRenameTab ' .. name) end) end, 'Rename tab' },
 
 	},
-	['<C-Space>'] = { ':Neotree toggle<CR>', 'Open neo-tree' }
+	['<C-Space>'] = { ':Neotree toggle<CR>', 'Open neo-tree' },
+	['<Tab>'] = { ':bn<CR>', 'Previous buffer' },
+	['<S-Tab>'] = { ':bp<CR>', 'Next buffer' },
+	['<S-Insert>'] = { '"+p', 'Copy' }
 }
 
 M.opts = {}

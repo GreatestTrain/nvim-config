@@ -1,8 +1,8 @@
 ---@type Plugin
 local M = {}
 
-M[1] = 'rockyzhang24/arctic.nvim'
-M.name = 'arctic'
+M[1] = 'npxbr/gruvbox.nvim'
+M.name = 'gruvbox'
 M.dependencies = {
 	{
 		'rktjmp/lush.nvim',
@@ -10,8 +10,11 @@ M.dependencies = {
 	}
 }
 
-M.config = function ()
-	vim.cmd ("colorscheme " .. "arctic")
+M.priority = 1000
+---@diagnostic disable-next-line: unused-local
+M.config = function (plugin, opts)
+	vim.cmd [[:colorscheme gruvbox]]
 end
+
 
 return M
