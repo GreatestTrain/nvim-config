@@ -1,5 +1,5 @@
--- Set mapleader to space
-vim.g.mapleader = " "
-
--- Load options - lua/options.lua
+-- set options file
 require 'options'
+
+-- setup lazy.nvim
+require 'config.lazy'
