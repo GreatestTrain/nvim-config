@@ -2,4 +2,5 @@
 require 'options'
 
 -- setup lazy.nvim
-require 'config.lazy'
+local u = require('utils')
+u.bootstrap()

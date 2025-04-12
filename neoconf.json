@@ -1,0 +1,6 @@
+{
+  "import" : {
+    "vscode" : true
+  },
+  "live_reload" : true
+}
