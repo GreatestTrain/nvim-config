@@ -10,7 +10,7 @@ m[#m+1] = { 'gdscript' }
 m[#m+1] = { 'html' }
 m[#m+1] = { 'java_language_server' }
 m[#m+1] = { 'julials' }
-m[#m+1] = { 'ltex' }
+m[#m+1] = { 'ltex', settings = { ltex = { language = "es" } } }
 m[#m+1] = { 'lua_ls' }
 m[#m+1] = { 'marksman' }
 m[#m+1] = { 'nushell' }
