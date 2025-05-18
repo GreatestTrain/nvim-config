@@ -3,4 +3,19 @@
     "vscode" : true
   },
   "live_reload" : true
+  // "plugins" : {
+  //   "lua_ls" : {
+  //     "enabled_for_neovim_config" : true,
+  //     "enabled" : true
+  //   }
+  // },
+  // "lspconfig" : {
+  //   "lua_ls": {  }
+  //
+  //   "lua_ls" : {
+  //     "Lua": {
+  //       "workspace" : [ "${user}/.config/nvim/lazy/lazy.nvim/lua" ]
+  //     }
+  //   }
+  // }
 }

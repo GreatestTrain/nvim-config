@@ -1,3 +1,4 @@
+---@class LazySpec
 return {
 	"scottmckendry/cyberdream.nvim",
 	name="cyberdream",

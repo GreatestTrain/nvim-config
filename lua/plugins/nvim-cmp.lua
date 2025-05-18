@@ -1,4 +1,6 @@
 local ok, opts = pcall(require, 'options.nvim-cmp')
+
+---@class LazySpec
 local m = {}
 
 m[1] = "hrsh7th/nvim-cmp"
@@ -14,18 +16,21 @@ m.dependencies = {
   "aspeddro/cmp-pandoc.nvim",
   { "rcarriga/cmp-dap", dependencies = "nvim-dap" },
   "luasnip",
-  "nvim-autopairs"
+  "nvim-autopairs",
+  "lazydev",
 }
+
 m.opts = ok and opts or {}
 
-m.config = function(plugin, opts)
+m.config = function(plugin, o)
   local cmp = require(plugin.name)
-
-  if next(opts) ~= nil then
-    cmp.setup(opts[1])
-    cmp.setup.cmdline(':', opts.cmdline[":"])
-    cmp.setup.cmdline({ '/', '?' }, opts.cmdline["/"])
+  if next(o) ~= nil then
+    cmp.setup(o[1])
+    cmp.setup.cmdline(':', o.cmdline[":"])
+    cmp.setup.cmdline({ '/', '?' }, o.cmdline["/"])
   end
+
+  -- cmp.setup.filetype("lua", )
 
   local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
 

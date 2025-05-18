@@ -1,3 +1,4 @@
+---@class LazySpec
 return {
   "nvim-telescope/telescope.nvim",
   name = 'telescope',

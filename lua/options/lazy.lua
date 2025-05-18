@@ -4,7 +4,7 @@ return {
   },
   install = { colorscheme = { "melange", "murphy", "default" } },
   ui = {
-    border = { "╔", "═" ,"╗", "║", "╝", "═", "╚", "║" },
+    -- border = { "╔", "═" ,"╗", "║", "╝", "═", "╚", "║" },
   },
   checker = {
 	  enabled = true,
