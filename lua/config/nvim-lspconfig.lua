@@ -17,5 +17,4 @@ m['nushell'] = {}
 m['postgres_lsp'] = {}
 m['jsonls'] = {}
 
-
 return m
