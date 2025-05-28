@@ -5,7 +5,7 @@ return {
   priority = 1000,
   name = 'srcery',
   config = function ()
-    vim.g.srcery_inverse_match_paren = true
+    vim.g.srcery_inverse_match_paren = false
     vim.cmd.colorscheme 'srcery'
   end
 }

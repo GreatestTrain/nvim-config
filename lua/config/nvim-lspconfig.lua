@@ -2,7 +2,7 @@ local m = {}
 
 m['rust_analyzer'] = {}
 m['pyright'] = {}
-m['awk_ls'] = {}
+m['awk_ls'] = { cmd={"npx", "awk-language-server"} }
 m['bashls'] = {}
 m['cmake'] = {}
 m['clangd'] = {}
