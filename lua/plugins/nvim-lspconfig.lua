@@ -9,13 +9,12 @@ m.lazy 		= false
 m.priority 	= 1000
 m.config	= function (_, opts)
   local cmp_capabilities = require('cmp_nvim_lsp').default_capabilities()
-  vim.lsp.config('*', { capabilities = cmp_capabilities } )
+  -- if vim.loop.os_uname() == "Windows_NT" then
+  --   return
+  -- end
   for server_name, server_conf in pairs(opts) do
-      -- lspconfig[server[1]].setup(vim.tbl_extend("keep", {capabilities = cmp_capabilities}, server))
-      if next(server_conf) ~= nil then
-        vim.lsp.config(server_name, server_conf)
-      end
-      vim.lsp.enable(server_name)
+    vim.lsp.config(server_name, vim.tbl_extend("force", server_conf, { capabilities = cmp_capabilities }))
+    vim.lsp.enable(server_name)
   end
 end
 m.opts		= require 'config.nvim-lspconfig' or nil
